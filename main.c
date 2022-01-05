@@ -1,43 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "funciones.h"
-
-typedef struct{
-    char titulo[20];
-    char genero[20];
-    int duracion;
-    char descripcion[50];
-    int puntaje;
-    char linkImagen[50];
-}EMovie;
+#include <conio.h>
+#include "funciones.c"
 
 int main()
-{
+{   
+    EMovie movie[CANT];
+    init(movie);
+
+    //FUNCIONES PARA EL WHILE
     char seguir='s';
     int opcion=0;
 
-    while(seguir=='s')
-    {
-        printf("1- Agregar pelicula\n");
-        printf("2- Borrar pelicula\n");
-        printf("3- Generar pagina web\n");
-        printf("4- Salir\n");
-
-        scanf("%d",&opcion);
-
-        switch(opcion)
-        {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-               break;
-            case 4:
-                seguir = 'n';
-                break;
+   do{
+        system("cls");
+        menu();
+        opcion = getch();
+        switch(opcion){
+            case 49 : printf("Ingresar Peliculas: \n"); break;// tecla 1
+            case 50 : printf("Borrar Peliculas: \n"); break;//tecla 2
+            case 51 : printf("Mostrar Peliculas\n"); break;//tecla 3
+            case 52 : printf("Generar pagina Web: \n"); break;//tecla 4
+            /*case 53 : ;break;//tecla 5
+            case 54 : ;break;//tecla 6
+            case 55 : ;break;//tecla 7*/
         }
-    }
 
-    return 0;
+    }while(opcion != 53);//salir 8
 }

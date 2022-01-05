@@ -1,6 +1,26 @@
-
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
+
+#define CANT 3
+
+/*
+*Estructura de pelicula
+*/
+typedef struct{
+    char titulo[20];
+    char genero[20];
+    int duracion;
+    char descripcion[50];
+    int puntaje;
+    char linkImagen[50];
+}EMovie;
+
+/*
+*Funcion Menu
+*/
+void menu();
+
+void init(EMovie movie[CANT]);
 
 /**
  *  Agrega una pelicula al archivo binario
@@ -15,6 +35,8 @@ int agregarPelicula(EMovie movie);
  *  @return retorna 1 o 0 de acuerdo a si pudo eliminar la pelicula o no
  */
 int borrarPelicula(EMovie movie);
+
+int mostrarPelicula(EMovie movie);
 
 /**
  *  Genera un archivo html a partir de las peliculas cargadas en el archivo binario.
