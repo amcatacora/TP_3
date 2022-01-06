@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 #include <conio.h>
 #include "funciones.c"
 
@@ -7,7 +8,7 @@ int main()
 {   
     EMovie movie[CANT];
     init(movie);
-
+    struct Emovie p;
     //FUNCIONES PARA EL WHILE
     char seguir='s';
     int opcion=0;

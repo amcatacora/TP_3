@@ -6,7 +6,7 @@
 /*
 *Estructura de pelicula
 */
-typedef struct{
+typedef struct Emovie{
     char titulo[20];
     char genero[20];
     int duracion;
@@ -18,6 +18,8 @@ typedef struct{
 /*
 *Funcion Menu
 */
+void leer();
+
 void menu();
 
 void init(EMovie movie[CANT]);
@@ -27,7 +29,12 @@ void init(EMovie movie[CANT]);
  *  @param movie la estructura a ser agregada al archivo
  *  @return retorna 1 o 0 de acuerdo a si pudo agregar la pelicula o no
  */
-int agregarPelicula(EMovie movie);
+
+int agregarPelicula(struct Emovie* p;
+
+int ingresarPelicula(struct Emovie* p);
+
+int subirPelicula(struct Emovie* p);
 
 /**
  *  Borra una pelicula del archivo binario
@@ -45,4 +52,4 @@ int mostrarPelicula(EMovie movie);
  */
 void generarPagina(EMovie lista[], char nombre[]);
 
-#endif // FUNCIONES_H_INCLUDED
+#endif// FUNCIONES_H_INCLUDED
