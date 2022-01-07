@@ -16,8 +16,8 @@ void init(EMovie movie[CANT]){
         strcpy(movie[i].descripcion,"");
         movie[i].puntaje = 0 ;
         strcpy(movie[i].linkImagen,"");
-    }  
-};
+    }
+}
 
 //FUNCION LEER/CREAR PELICULAS.DAT
 void leer (){
@@ -28,12 +28,12 @@ void leer (){
         printf("No se puede abrir el archivo");
         exit(1);
     }
-    
+
     while (!feof(bin)){
         cant=fread(&pelis,sizeof(pelis),1,bin);
 
         if (cant!=1){
-            
+
             if (feof(bin)){
                 break;
             }
@@ -48,7 +48,7 @@ void leer (){
         pelis.descripcion,
         pelis.puntaje);
     }
-    
+
 };
 
 
@@ -75,7 +75,7 @@ void menu(){
 
 //FUNCION AGREGAR PELICULA
 
-int agregarPelicula (){
+int agregarPelicula (struct Emovie* p){
     char loop ='s';
     while (loop=="s"){
 
@@ -86,7 +86,7 @@ int agregarPelicula (){
         agregarPelicula(&p);
 
         loop= printf("Ingresar otra pelicula? s/n: ");
-    }  
+    }
 };
 
 int ingresarPelicula(struct Emovie* p){
@@ -105,7 +105,7 @@ int subirPelicula(struct Emovie* p){
         return 0;
     }
     fwrite(p,sizeof(struct Emovie),1,fp);
-    fclose(fp);   
+    fclose(fp);
     return 1;
 };
 //FIN FUNCION AGREGAR

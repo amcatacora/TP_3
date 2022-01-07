@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <conio.h>
-#include "funciones.c"
+#include "funciones.h"
 
 int main()
-{   
+{
     EMovie movie[CANT];
     init(movie);
-    struct Emovie p;
+    //struct Emovie p;
     //FUNCIONES PARA EL WHILE
-    char seguir='s';
+    //char seguir='s';
     int opcion=0;
 
    do{

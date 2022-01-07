@@ -30,7 +30,7 @@ void init(EMovie movie[CANT]);
  *  @return retorna 1 o 0 de acuerdo a si pudo agregar la pelicula o no
  */
 
-int agregarPelicula(struct Emovie* p;
+int agregarPelicula(struct Emovie* p);
 
 int ingresarPelicula(struct Emovie* p);
 
