@@ -2,27 +2,28 @@
 #define FUNCIONES_H_INCLUDED
 
 #define CANT 3
+#define INACTIVO 0
+#define ACTIVO 1
 
 /*
 *Estructura de pelicula
 */
-typedef struct Emovie{
-    char titulo[20];
-    char genero[20];
+struct EPelicula{
+    char titulo[50];
+    char genero[50];
     int duracion;
-    char descripcion[50];
+    char descripcion[100];
     int puntaje;
     char linkImagen[50];
-}EMovie;
+    int estado;
+};
+
+void listarPeliculas();
 
 /*
 *Funcion Menu
 */
-void leer();
-
 void menu();
-
-void init(EMovie movie[CANT]);
 
 /**
  *  Agrega una pelicula al archivo binario
@@ -30,26 +31,21 @@ void init(EMovie movie[CANT]);
  *  @return retorna 1 o 0 de acuerdo a si pudo agregar la pelicula o no
  */
 
-int agregarPelicula(struct Emovie* p);
+int agregarPelicula(struct EPelicula* pelicula);
 
-int ingresarPelicula(struct Emovie* p);
+int ingresarPelicula();
 
-int subirPelicula(struct Emovie* p);
+int subirPelicula(struct EPelicula* pelicula);
 
 /**
  *  Borra una pelicula del archivo binario
  *  @param movie la estructura a ser eliminada al archivo
  *  @return retorna 1 o 0 de acuerdo a si pudo eliminar la pelicula o no
  */
-int borrarPelicula(EMovie movie);
+int borrarPelicula(struct EPelicula* pelicula);
 
-int mostrarPelicula(EMovie movie);
+int mostrarPelicula(struct EPelicula* pelicula);
 
-/**
- *  Genera un archivo html a partir de las peliculas cargadas en el archivo binario.
- *  @param lista la lista de peliculas a ser agregadas en el archivo.
- *  @param nombre el nombre para el archivo.
- */
-void generarPagina(EMovie lista[], char nombre[]);
+int buscarPeliculaPorTitulo(char* titulo);
 
 #endif// FUNCIONES_H_INCLUDED

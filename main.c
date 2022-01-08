@@ -6,26 +6,32 @@
 
 int main()
 {
-    EMovie movie[CANT];
-    init(movie);
-    //struct Emovie p;
-    //FUNCIONES PARA EL WHILE
-    //char seguir='s';
     int opcion=0;
 
-   do{
+    do{
         system("cls");
         menu();
+        listarPeliculas();
         opcion = getch();
         switch(opcion){
-            case 49 : printf("Ingresar Peliculas: \n"); break;// tecla 1
-            case 50 : printf("Borrar Peliculas: \n"); break;//tecla 2
+            case 49 : ingresarPelicula(); break;// tecla 1
+            case 50 : {
+                char titulo[64];
+                getString("Ingrese el titulo a buscar en archivo: ", titulo);
+                int indice = buscarPeliculaPorTitulo(titulo);
+                if(indice >= 0){
+                    printf("Se encontro: %s\r\n", titulo);
+                    printf("Esta seguro que desea borrar esta pelicula?");
+                }
+                else {
+                    printf("el titulo ingresado no esta en el archivo");
+                }
+                getch();
+            }
+            break;//tecla 2
+
             case 51 : printf("Mostrar Peliculas\n"); break;//tecla 3
             case 52 : printf("Generar pagina Web: \n"); break;//tecla 4
-            /*case 53 : ;break;//tecla 5
-            case 54 : ;break;//tecla 6
-            case 55 : ;break;//tecla 7*/
         }
-
-    }while(opcion != 53);//salir 8
+    }while(opcion != 53);//salir 5
 }

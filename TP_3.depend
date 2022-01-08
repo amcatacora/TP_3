@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1641604589 source:c:\users\adrian catacora\desktop\utn\programacion\proyectos\git\tp_3\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<sys/stat.h>
+	<windows.h>
+	<conio.h>
+	"funciones.h"
+
+1641604233 c:\users\adrian catacora\desktop\utn\programacion\proyectos\git\tp_3\funciones.h
+
+1641604598 source:c:\users\adrian catacora\desktop\utn\programacion\proyectos\git\tp_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/stat.h>
+	<conio.h>
+	"funciones.h"
+
