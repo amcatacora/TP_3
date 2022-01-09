@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <conio.h>
 #include "funciones.h"
+#include <ctype.h>
 
 void menu(){
     printf("******************************\n");
@@ -28,7 +29,8 @@ void listarPeliculas(){
         printf("\nNo se encontraron peliculas guardadas.\n");
         //exit(1);
     } else {
-        printf("\nListado de peliculas:\n\n");
+        printf("\n                                          Listado de peliculas:\n\n");
+        printf(" |               Titulo               |        Genero       | Duracion  | Puntaje |\n");
         while(!feof(bin)){
             cant=fread(&pelicula,sizeof(pelicula),1,bin);
 
@@ -41,7 +43,8 @@ void listarPeliculas(){
                 }
             }
             if(pelicula.estado == ACTIVO) {
-                printf("%s\t%d\n", pelicula.titulo, pelicula.duracion);
+
+                printf(" | %-35s| %-20s|%4d Horas | %7d |\n", pelicula.titulo,pelicula.genero,pelicula.duracion,pelicula.puntaje);
             }
         }
     }
@@ -75,7 +78,8 @@ int ingresarPelicula() {
     struct EPelicula pelicula;
     system("cls");
     printf("Ingrese los datos de la pelicula a agregar\n");
-    getString("Titulo: ", pelicula.titulo);
+    printf("Titulo: ");
+    gets(pelicula.titulo);
     getString("Genero: ", pelicula.genero);
     pelicula.duracion = getInt("Duracion: ");
     getString("Descripcion: ", pelicula.descripcion);
@@ -131,3 +135,4 @@ int buscarPeliculaPorTitulo(char* titulo){
     free(pRet);
     return NULL;
 };
+
